@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public enum IngredientType
@@ -56,6 +57,8 @@ public class CookingMain : MonoBehaviour
     {
         PopulateCupboard();
         MakeIngredientDictionary();
+
+		Debug.Log(GetIngredientName(IngredientType.JELLY, true));
     }
 
     private void MakeIngredientDictionary()
@@ -89,9 +92,34 @@ public class CookingMain : MonoBehaviour
         }
     }
 
-    public static string GetIngredientName(IngredientType ingredientType)
+    public static string GetIngredientName(IngredientType ingredientType, bool capitalize = false)
     {
-        return ingredientType.ToString();
+        string allCaps = ingredientType.ToString().Replace('_',' ');
+        string allSmall = allCaps.ToLower();
+
+        if(capitalize)
+        {
+            StringBuilder sb = new StringBuilder();
+            
+            bool nextIsCap = true;
+            for(int i=0; i<allSmall.Length; i++)
+            {
+                if(nextIsCap)
+                {
+                    sb.Append(allCaps[i]);
+                    nextIsCap = false;
+                }
+                else 
+                {
+                    sb.Append(allSmall[i]);
+					nextIsCap |= allSmall[i] == ' ';
+                }
+            }
+
+            return sb.ToString();
+        }
+        else
+            return allSmall;
     }
 }
 
