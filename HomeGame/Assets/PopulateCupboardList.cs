@@ -20,10 +20,9 @@ public class PopulateCupboardList : MonoBehaviour
         foreach (var ingredient in cupboard)
         {
             var newItem = Instantiate(ItemTemplate, new Vector3(0, 20, 0), Quaternion.identity, ItemTemplate.transform.parent);
-
-
-
-
+            var text = newItem.GetComponentInChildren<Text>();
+            text.text = CookingMain.GetIngredientName(ingredient);
+            newItem.name = text.text;
         }
 
         ItemTemplate.SetActive(false);

@@ -60,7 +60,7 @@ public class Template_UIManager : MonoBehaviour
     void Awake()
     {
 
-        VD.LoadDialogues(); //Load all dialogues to memory so that we dont spend time doing so later
+        //VD.LoadDialogues(); //Load all dialogues to memory so that we dont spend time doing so later
         //An alternative to this can be preloading dialogues from the VIDE_Assign component!
     }
 
@@ -372,7 +372,7 @@ public class Template_UIManager : MonoBehaviour
         //    data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[NAME]", VD.assigned.gameObject.name);
 
         if (data.comments[data.commentIndex].Contains("[ITEM]"))
-            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[ITEM]", PlayerItems.Instance.GetRandomItem().name);
+            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[ITEM]", "placeholder");
 
         if (data.comments[data.commentIndex].Contains("[WEAPON]"))
             data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[WEAPON]", "sword");
