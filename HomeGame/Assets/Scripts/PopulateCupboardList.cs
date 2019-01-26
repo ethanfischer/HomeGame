@@ -29,7 +29,6 @@ public class PopulateCupboardList : MonoBehaviour
         {
             IngredientType ingredient = cupboard[i];
             GameObject newItem = Instantiate(ItemTemplate,  ItemTemplate.transform.parent);
-			newItem.transform.localPosition = new Vector3(0, i*-20, 0);
 			newItem.SetActive(true);
 			m_items.Add(newItem);
 
