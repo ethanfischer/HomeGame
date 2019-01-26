@@ -37,5 +37,6 @@ public class PopulateCupboardList : MonoBehaviour
 	void OnCupboardItemSelected(IngredientType ingredient)
 	{
 		CookingMain.AddToStew(ingredient);
+        Debug.Log("oncupboardsdfjlskj");
 	}
 }
