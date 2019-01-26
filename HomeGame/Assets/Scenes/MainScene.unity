@@ -1630,6 +1630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diags:
   - Charlie
+  - Chef1
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
@@ -1644,7 +1645,7 @@ MonoBehaviour:
   - TestDialogue
   - TriggeredDude
   - Witch
-  assignedIndex: 12
+  assignedIndex: 13
   assignedID: 87922
   assignedDialogue: TestDialogue
   interactionCount: 0
@@ -2170,7 +2171,7 @@ GameObject:
   - component: {fileID: 937684291}
   - component: {fileID: 937684290}
   - component: {fileID: 937684289}
-  - component: {fileID: 937684292}
+  - component: {fileID: 937684293}
   m_Layer: 5
   m_Name: Chef
   m_TagString: Untagged
@@ -2238,7 +2239,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937684292}
+      - m_Target: {fileID: 937684293}
         m_MethodName: DoDialogue
         m_Mode: 1
         m_Arguments:
@@ -2288,7 +2289,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937684287}
   m_CullTransparentMesh: 0
---- !u!114 &937684292
+--- !u!114 &937684293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2297,7 +2298,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 937684287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2386fb7a029764c0fbbec22c0e36fd9d, type: 3}
+  m_Script: {fileID: 11500000, guid: eb7f1abe676a7f84fb49ba32a309377d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogues:
@@ -2305,6 +2306,7 @@ MonoBehaviour:
   - {fileID: 1921186371}
   UIManager: {fileID: 1630843244}
   SceneManager: {fileID: 1570386558}
+  CookingMain: {fileID: 524133266}
 --- !u!1 &947271983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,6 +2839,7 @@ MonoBehaviour:
   - {fileID: 118191990}
   UIManager: {fileID: 1630843244}
   SceneManager: {fileID: 1570386558}
+  CookingMain: {fileID: 0}
 --- !u!114 &1300679108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4536,13 +4539,75 @@ MonoBehaviour:
   defaultNPCSprite: {fileID: 0}
   defaultPlayerSprite: {fileID: 0}
   targetManager: {fileID: 0}
-  preload: 0
+  preload: 1
   notuptodate: 0
   startp: 0
   loadtag: 
   langs: []
-  S_playerDiags: []
-  S_actionNodes: []
+  S_playerDiags:
+  - commentCount: 1
+    s_comment:
+    - text: Go get an ingredient from the cupboard!
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: -1
+      outActionIndex: 1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 1
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: 'You got the ingredient
+
+'
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: Chef
+    methodName: JumpToNextNode
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 0
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: Chef
+    methodName: ResetInteractionCount
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 3
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
 --- !u!1 &2006728170
 GameObject:
   m_ObjectHideFlags: 0

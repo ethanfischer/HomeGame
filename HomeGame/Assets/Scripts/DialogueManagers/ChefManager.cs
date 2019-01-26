@@ -1,18 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VIDE_Data;
 
 public class ChefManager : DialogueManager
 {
-    // Start is called before the first frame update
-    void Start()
+    public void JumpToNextNode()
     {
-        
+        switch (SceneManager.SceneIndex)
+        {
+            case 0:
+                break;
+
+            case 1:
+                GoToNextNode();
+                break;
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void GoToNextNode()
     {
-        
+        if (AreScene1ConditionsMet())
+        {
+            VD.SetNode(2);
+        }
+
+        VD.SetNode(1);
+    }
+
+    private bool AreScene1ConditionsMet()
+    {
+        if (CookingMain.LastStewIngredient() != IngredientType.NONE)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public override void ResetInteractionCount()
+    {
+        base.ResetInteractionCount();
     }
 }
