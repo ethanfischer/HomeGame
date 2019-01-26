@@ -17,11 +17,13 @@ public class PopulateCupboardList : MonoBehaviour
     private void MakeButtons()
     {
         var cupboard = CookingMain.CupboardList;
-        foreach (var ingredient in cupboard)
+        for (var i = 0; i < cupboard.Count; i++)
         {
-            var newItem = Instantiate(ItemTemplate, new Vector3(0, 20, 0), Quaternion.identity, ItemTemplate.transform.parent);
+            var ingredient = cupboard[i];
+            var newItem = Instantiate(ItemTemplate,  ItemTemplate.transform.parent);
+            newItem.transform.localPosition = new Vector3(0, i*-20, 0);
             var text = newItem.GetComponentInChildren<Text>();
-            text.text = CookingMain.GetIngredientName(ingredient);
+            text.text = CookingMain.GetIngredientName(ingredient, true);
             newItem.name = text.text;
         }
 
