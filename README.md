@@ -1,6 +1,8 @@
-combination system
-UI
-dialogue system
+# Home Game:
+
+* combination system
+* UI
+* dialogue system
     -VIDE? Dynamic dialogue (variables at least)
 dialogue text
     Opening text should explain the setting. It should be inhospitable, but homey. Possibly randomized.
