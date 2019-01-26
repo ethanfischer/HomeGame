@@ -57,8 +57,6 @@ public class CookingMain : MonoBehaviour
     {
         PopulateCupboard();
         MakeIngredientDictionary();
-
-		Debug.Log(GetIngredientName(IngredientType.JELLY, true));
     }
 
     private void MakeIngredientDictionary()
