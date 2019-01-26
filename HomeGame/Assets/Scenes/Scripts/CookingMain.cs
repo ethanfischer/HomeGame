@@ -24,27 +24,70 @@ public enum IngredientType
 
 public class CookingMain : MonoBehaviour
 {
-	public Ingredient[] AllIngredients { get { return m_ingredients; } }
-	private Ingredient[] m_ingredients =
-	{ 
+    public Ingredient[] AllIngredients { get { return m_ingredients; } }
+    private Ingredient[] m_ingredients =
+    { 
 		//												sa sw so sp b  u  m
 		new Ingredient(IngredientType.CHICKEN_WINGS,    3, 0, 0, 0, 0, 8, 0),
-		new Ingredient(IngredientType.ONIONS,           0, 0, 0, 0, 0, 0, 2),
-		new Ingredient(IngredientType.JELLY,            0, 8, 1, 0, 0, 0, 0),
-		new Ingredient(IngredientType.JALEPENOS,        0, 0, 0, 9, 0, 0, 0),
-		new Ingredient(IngredientType.GRAPEFRUIT,       0, 2, 7, 0, 1, 8, 0),
-		new Ingredient(IngredientType.SWEETTARTS,       0, 5, 5, 0, 0, 0, 0),
-		new Ingredient(IngredientType.PICKLES,          4, 0, 6, 0, 0, 0, 0),
-		new Ingredient(IngredientType.CRICKETS,         2, 1, 0, 0, 1, 6, 0),
-		new Ingredient(IngredientType.MUSHROOM,         0, 0, 0, 0, 0, 5, 0),
-		new Ingredient(IngredientType.BROTH,            4, 0, 0, 0, 0, 4, 1),
-		new Ingredient(IngredientType.SODA,             0, 8, 0, 0, 2, 0, 0),
-		new Ingredient(IngredientType.BELL_PEPPER,      0, 1, 1, 0, 0, 0, 0),
-		new Ingredient(IngredientType.COFFEE,           0, 0, 0, 0, 9, 8, 0),
-		new Ingredient(IngredientType.WINE,             0, 2, 3, 0, 0, 0, 1),
-		new Ingredient(IngredientType.CLOVES,           0, 1, 0, 3, 0, 0, 0),
-		new Ingredient(IngredientType.CORRIANDER,       0, 0, 0, 1, 0, 1, 1)
-	};
+        new Ingredient(IngredientType.ONIONS,           0, 0, 0, 0, 0, 0, 2),
+        new Ingredient(IngredientType.JELLY,            0, 8, 1, 0, 0, 0, 0),
+        new Ingredient(IngredientType.JALEPENOS,        0, 0, 0, 9, 0, 0, 0),
+        new Ingredient(IngredientType.GRAPEFRUIT,       0, 2, 7, 0, 1, 8, 0),
+        new Ingredient(IngredientType.SWEETTARTS,       0, 5, 5, 0, 0, 0, 0),
+        new Ingredient(IngredientType.PICKLES,          4, 0, 6, 0, 0, 0, 0),
+        new Ingredient(IngredientType.CRICKETS,         2, 1, 0, 0, 1, 6, 0),
+        new Ingredient(IngredientType.MUSHROOM,         0, 0, 0, 0, 0, 5, 0),
+        new Ingredient(IngredientType.BROTH,            4, 0, 0, 0, 0, 4, 1),
+        new Ingredient(IngredientType.SODA,             0, 8, 0, 0, 2, 0, 0),
+        new Ingredient(IngredientType.BELL_PEPPER,      0, 1, 1, 0, 0, 0, 0),
+        new Ingredient(IngredientType.COFFEE,           0, 0, 0, 0, 9, 8, 0),
+        new Ingredient(IngredientType.WINE,             0, 2, 3, 0, 0, 0, 1),
+        new Ingredient(IngredientType.CLOVES,           0, 1, 0, 3, 0, 0, 0),
+        new Ingredient(IngredientType.CORRIANDER,       0, 0, 0, 1, 0, 1, 1)
+    };
+
+    public List<IngredientType> CupboardList { get { return m_cupboardList; } }
+    private List<IngredientType> m_cupboardList = new List<IngredientType>();
+
+    public Dictionary<IngredientType, Ingredient> IngredientDictionary = new Dictionary<IngredientType, Ingredient>();
+    public Stew Stew = new Stew();
+
+    void Awake()
+    {
+        PopulateCupboard();
+        MakeIngredientDictionary();
+    }
+
+    private void MakeIngredientDictionary()
+    {
+        IngredientDictionary.Clear();
+        foreach (var ingredient in AllIngredients)
+        {
+            IngredientDictionary.Add(ingredient.Type, ingredient);
+        }
+    }
+
+    public void AddToStew(IngredientType ingredientType)
+    {
+        if (IngredientDictionary.ContainsKey(ingredientType))
+        {
+            Stew.Add(IngredientDictionary[ingredientType]);
+        }
+    }
+
+    public void PopulateCupboard()
+    {
+        CupboardList.Clear();
+        while (CupboardList.Count < 10)
+        {
+            var randomInt = Random.Range(0, AllIngredients.Length);
+            var ingredient = AllIngredients[randomInt];
+            if (!CupboardList.Contains(ingredient.Type))
+            {
+                CupboardList.Add(ingredient.Type);
+            }
+        }
+    }
 
 
 }
@@ -85,34 +128,39 @@ public struct Ingredient
 
 public class Stew
 {
-	public List<Ingredient> m_ingredients = new List<Ingredient>();
+    public List<Ingredient> Ingredients = new List<Ingredient>();
 
-	public int FinalScore()
-	{
-		int simpleScore = BaseScore();
-		int multiplier = Multiplier();
+    public int FinalScore()
+    {
+        int simpleScore = BaseScore();
+        int multiplier = Multiplier();
 
-		return simpleScore * multiplier;
-	}
+        return simpleScore * multiplier;
+    }
 
-	public int BaseScore() { return GetScore((i) => { return i.Salt + i.Sweet + i.Sour + i.Spicy + i.Bitter + i.Umami; }); }
-	public int Multiplier() { return GetScore((i) => { return i.Multiplier; }) + 1; }
-	public int Saltiness() { return GetScore((i) => { return i.Salt; }); }
-	public int Sweetness() { return GetScore((i) => { return i.Sweet; }); }
-	public int Sourness() { return GetScore((i) => { return i.Sour; }); }
-	public int Spiciness() { return GetScore((i) => { return i.Spicy; }); }
-	public int Bitterness() { return GetScore((i) => { return i.Bitter; }); }
-	public int Umiminess() { return GetScore((i) => { return i.Umami; }); }
+    public int BaseScore() { return GetScore((i) => { return i.Salt + i.Sweet + i.Sour + i.Spicy + i.Bitter + i.Umami; }); }
+    public int Multiplier() { return GetScore((i) => { return i.Multiplier; }) + 1; }
+    public int Saltiness() { return GetScore((i) => { return i.Salt; }); }
+    public int Sweetness() { return GetScore((i) => { return i.Sweet; }); }
+    public int Sourness() { return GetScore((i) => { return i.Sour; }); }
+    public int Spiciness() { return GetScore((i) => { return i.Spicy; }); }
+    public int Bitterness() { return GetScore((i) => { return i.Bitter; }); }
+    public int Umiminess() { return GetScore((i) => { return i.Umami; }); }
 
 
-	delegate int ScoreDelegate(Ingredient ingredient);
-	private int GetScore(ScoreDelegate scoreCalculator)
-	{
-		int score = 0;
-		for (int i = 0; i < m_ingredients.Count; i++)
-		{
-			score += scoreCalculator(m_ingredients[i]);
-		}
-		return score;
-	}
+    delegate int ScoreDelegate(Ingredient ingredient);
+    private int GetScore(ScoreDelegate scoreCalculator)
+    {
+        int score = 0;
+        for (int i = 0; i < Ingredients.Count; i++)
+        {
+            score += scoreCalculator(Ingredients[i]);
+        }
+        return score;
+    }
+
+    public void Add(Ingredient ingredient)
+    {
+        Ingredients.Add(ingredient);
+    }
 }
