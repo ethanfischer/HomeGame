@@ -89,7 +89,10 @@ public class CookingMain : MonoBehaviour
         }
     }
 
-
+    public static string GetIngredientName(IngredientType ingredientType)
+    {
+        return ingredientType.ToString();
+    }
 }
 
 public struct Ingredient
@@ -164,3 +167,4 @@ public class Stew
         Ingredients.Add(ingredient);
     }
 }
+
