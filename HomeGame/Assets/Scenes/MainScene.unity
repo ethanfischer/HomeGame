@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -4478,7 +4478,7 @@ GameObject:
   - component: {fileID: 1921186370}
   - component: {fileID: 1921186371}
   m_Layer: 0
-  m_Name: Che1
+  m_Name: Chef1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4512,6 +4512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diags:
   - Charlie
+  - Chef1
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
@@ -4526,207 +4527,22 @@ MonoBehaviour:
   - TestDialogue
   - TriggeredDude
   - Witch
-  assignedIndex: 3
-  assignedID: 64398
-  assignedDialogue: DEMO_Condition
+  assignedIndex: 1
+  assignedID: 69997
+  assignedDialogue: Chef1
   interactionCount: 0
   alias: 
   overrideStartNode: -1
   defaultNPCSprite: {fileID: 0}
   defaultPlayerSprite: {fileID: 0}
   targetManager: {fileID: 0}
-  preload: 1
+  preload: 0
   notuptodate: 0
   startp: 0
   loadtag: 
   langs: []
-  S_playerDiags:
-  - commentCount: 1
-    s_comment:
-    - text: Tell me something.
-      extraData: ExtraData
-      inputSetIndex: 0
-      outputNodeIndex: -1
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 0
-    pTag: 
-    sprite: {fileID: 0}
-    vars:
-    - 2,3,4,6,5,1
-    - intCount
-    varKeys:
-    - outCondition
-    - condInfo
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: I am a very interesting cylinder.
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: 7
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 2
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: I say something different every time you talk to me.
-      extraData: ExtraData
-      inputSetIndex: 2
-      outputNodeIndex: 7
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 3
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: The interactionCount increases everytime. That will work as an index for
-        a node ID array.
-      extraData: ExtraData
-      inputSetIndex: 3
-      outputNodeIndex: 7
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 4
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: We use SetNode instead of using Next. For SetNode, you specify the ID
-        of the node you want to go to next.
-      extraData: ExtraData
-      inputSetIndex: 4
-      outputNodeIndex: 7
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 5
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: 'Don''t forget to check out the dialogueUI.cs. Check out the CallNext
-        method. '
-      extraData: ExtraData
-      inputSetIndex: 5
-      outputNodeIndex: 7
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 6
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: Enough already! Leave me alone!
-      extraData: ExtraData
-      inputSetIndex: 6
-      outputNodeIndex: 9
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 1
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: Interesting...
-      extraData: ExtraData
-      inputSetIndex: 7
-      outputNodeIndex: -1
-      outActionIndex: 0
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 7
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: Tell me more...
-      extraData: ExtraData
-      inputSetIndex: 8
-      outputNodeIndex: -1
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 8
-    pTag: 
-    sprite: {fileID: 0}
-    vars:
-    - 2,3,4,6,5,1
-    - intCount
-    varKeys:
-    - outCondition
-    - condInfo
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: Okay...
-      extraData: ExtraData
-      inputSetIndex: 9
-      outputNodeIndex: -1
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 10
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  S_actionNodes:
-  - pauseHere: 0
-    gameObjectName: '[No object]'
-    methodName: '[No method]'
-    paramType: -1
-    gotoNode: -1
-    param_bool: 0
-    param_string: 
-    param_int: 0
-    param_float: 0
-    ID: 9
-    outPlayerIndex: -1
-    outActionIndex: -1
-    ovrStartNode: 8
-    renameDialogue: 
+  S_playerDiags: []
+  S_actionNodes: []
 --- !u!1 &2006728170
 GameObject:
   m_ObjectHideFlags: 0
