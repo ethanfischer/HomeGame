@@ -11,6 +11,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine.UI;
 using VIDE_Data; //<--- Import to use VD class
 
@@ -367,8 +368,11 @@ public class Template_UIManager : MonoBehaviour
 
     void ReplaceWord(VD.NodeData data)
     {
-        if (data.comments[data.commentIndex].Contains("[NAME]"))
-            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[NAME]", VD.assigned.gameObject.name);
+        //if (data.comments[data.commentIndex].Contains("[NAME]"))
+        //    data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[NAME]", VD.assigned.gameObject.name);
+
+        if (data.comments[data.commentIndex].Contains("[ITEM]"))
+            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[ITEM]", PlayerItems.Instance.GetRandomItem().name);
 
         if (data.comments[data.commentIndex].Contains("[WEAPON]"))
             data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[WEAPON]", "sword");
