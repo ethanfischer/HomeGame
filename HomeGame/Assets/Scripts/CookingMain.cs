@@ -5,6 +5,8 @@ using UnityEngine;
 
 public enum IngredientType
 {
+	NONE = -1,
+
     CHICKEN_WINGS,
     ONIONS,
     JELLY,
@@ -51,7 +53,7 @@ public class CookingMain : MonoBehaviour
     private List<IngredientType> m_cupboardList = new List<IngredientType>();
 
     public Dictionary<IngredientType, Ingredient> IngredientDictionary = new Dictionary<IngredientType, Ingredient>();
-    public Stew Stew = new Stew();
+    private Stew m_stew = new Stew();
 
     void Awake()
     {
@@ -72,11 +74,16 @@ public class CookingMain : MonoBehaviour
     {
         if (IngredientDictionary.ContainsKey(ingredientType))
         {
-            Stew.Add(IngredientDictionary[ingredientType]);
+            m_stew.Add(IngredientDictionary[ingredientType]);
         }
     }
 
-    public void PopulateCupboard()
+	public IngredientType LastStewIngredient()
+	{
+		return m_stew.Ingredients.Count > 0 ? m_stew.Ingredients[m_stew.Ingredients.Count - 1].Type : IngredientType.NONE;
+	}
+
+	public void PopulateCupboard()
     {
         CupboardList.Clear();
         while (CupboardList.Count < 10)
@@ -157,9 +164,11 @@ public struct Ingredient
 
 public class Stew
 {
-    public List<Ingredient> Ingredients = new List<Ingredient>();
+    private List<Ingredient> m_ingredients = new List<Ingredient>();
+	public List<Ingredient> Ingredients { get { return m_ingredients; } }
 
-    public int FinalScore()
+
+	public int FinalScore()
     {
         int simpleScore = BaseScore();
         int multiplier = Multiplier();
@@ -181,16 +190,16 @@ public class Stew
     private int GetScore(ScoreDelegate scoreCalculator)
     {
         int score = 0;
-        for (int i = 0; i < Ingredients.Count; i++)
+        for (int i = 0; i < m_ingredients.Count; i++)
         {
-            score += scoreCalculator(Ingredients[i]);
+            score += scoreCalculator(m_ingredients[i]);
         }
         return score;
     }
 
     public void Add(Ingredient ingredient)
     {
-        Ingredients.Add(ingredient);
+        m_ingredients.Add(ingredient);
     }
 }
 
