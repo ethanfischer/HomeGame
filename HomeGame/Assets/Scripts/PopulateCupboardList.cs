@@ -21,7 +21,6 @@ public class PopulateCupboardList : MonoBehaviour
         {
             IngredientType ingredient = cupboard[i];
             var newItem = Instantiate(ItemTemplate,  ItemTemplate.transform.parent);
-            newItem.transform.localPosition = new Vector3(0, i*-20, 0);
             var text = newItem.GetComponentInChildren<Text>();
             text.text = CookingMain.GetIngredientName(ingredient, true);
             newItem.name = text.text;
