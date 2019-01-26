@@ -73,11 +73,11 @@ public class Template_UIManager : MonoBehaviour
         var doNotInteract = PreConditions(dialogue);
         if (doNotInteract) return;
 
-        if (!VD.isActive)
+        if (!VD.isActive && dialogue.interactionCount < 1)
         {
             Begin(dialogue);
         }
-        else
+        else if(VD.assigned == dialogue)
         {
             CallNext();
         }
@@ -160,21 +160,21 @@ public class Template_UIManager : MonoBehaviour
             }
 
             //Detect interact key
-            if (Input.GetKeyDown(interactionKey))
-            {
-                Interact(VD.assigned);
-            }
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (animatingText)
-                {
-                    Interact(VD.assigned);
-                }
-                else if (!data.isPlayer)
-                {
-                    Interact(VD.assigned);
-                }
-            }
+            //if (Input.GetKeyDown(interactionKey))
+            //{
+            //    Interact(VD.assigned);
+            //}
+            //if (Input.GetMouseButtonDown(0))
+            //{
+            //    if (animatingText)
+            //    {
+            //        Interact(VD.assigned);
+            //    }
+            //    else if (!data.isPlayer)
+            //    {
+            //        Interact(VD.assigned);
+            //    }
+            //}
         }
         //Note you could also use Unity's Navi system, in which case you would tick the useNavigation flag.
     }
@@ -491,8 +491,4 @@ public class Template_UIManager : MonoBehaviour
 
 
     #endregion
-
-    //Utility note: If you're on MonoDevelop. Go to Tools > Options > General and enable code folding.
-    //That way you can exapnd and collapse the regions and methods
-
 }
