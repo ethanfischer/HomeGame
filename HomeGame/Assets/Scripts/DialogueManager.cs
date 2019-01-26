@@ -5,14 +5,13 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
 	public VIDE_Assign[] Dialogues;
-	public Template_UIManager Manager;
+	public Template_UIManager UIManager;
+	public SceneManager SceneManager;
 
 	public void DoDialogue()
 	{
-		int index = 0;
+		int index = SceneManager.SceneIndex;
 
-		// Something that finds the proper index
-
-		Manager.Interact(Dialogues[index]);
+		UIManager.Interact(Dialogues[index]);
 	}
 }
