@@ -264,7 +264,7 @@ MonoBehaviour:
   - TriggeredDude
   - Witch
   assignedIndex: 4
-  assignedID: 1098
+  assignedID: 69262
   assignedDialogue: Chef3
   interactionCount: 0
   alias: 
@@ -280,7 +280,7 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: Comment...
+    - text: Go get another item
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
@@ -291,8 +291,10 @@ MonoBehaviour:
     ID: 0
     pTag: 
     sprite: {fileID: 0}
-    vars: []
-    varKeys: []
+    vars:
+    - 0
+    varKeys:
+    - ReplaceItem
     isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
@@ -1607,7 +1609,7 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: Comment...
+    - text: I've never had [ITEM] in a stew before.
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
@@ -1618,8 +1620,10 @@ MonoBehaviour:
     ID: 0
     pTag: 
     sprite: {fileID: 0}
-    vars: []
-    varKeys: []
+    vars:
+    - 0
+    varKeys:
+    - ReplaceItem
     isPlayer: 0
   S_actionNodes: []
 --- !u!1 &793949742
@@ -4851,7 +4855,7 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: Comment...
+    - text: '[ITEM], eh? If you say so'
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
@@ -4862,8 +4866,10 @@ MonoBehaviour:
     ID: 0
     pTag: 
     sprite: {fileID: 0}
-    vars: []
-    varKeys: []
+    vars:
+    - 1
+    varKeys:
+    - ReplaceItem
     isPlayer: 0
   S_actionNodes:
   - pauseHere: 0

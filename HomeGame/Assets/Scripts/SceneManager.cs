@@ -49,6 +49,13 @@ public class SceneManager : MonoBehaviour
                 CupboardUI.SetActive(false);
                 UIManager.textReplaceIngredient = CookingMain.LastStewIngredient();
                 break;
+            case 3:
+                CupboardButton.SetActive(true);
+                break;
+            case 4:
+                CupboardUI.SetActive(false);
+                UIManager.textReplaceIngredient = CookingMain.LastStewIngredient();
+                break;
             default:
                 break;
         }
