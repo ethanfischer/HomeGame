@@ -23,4 +23,11 @@ public class ChefManager : DialogueManager
     {
         base.ResetInteractionCount();
     }
+
+	public void PickAnItemForTheStew()
+	{
+		IngredientType picked = CookingMain.CupboardList[Random.Range(0, CookingMain.CupboardList.Count)];
+		CookingMain.AddToStew(picked);
+		UIManager.textReplaceIngredient = picked;
+	}
 }
