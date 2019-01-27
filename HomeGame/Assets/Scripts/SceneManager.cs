@@ -7,6 +7,7 @@ public class SceneManager : MonoBehaviour
 {
 	private int m_sceneIndex = 0;
 	public int SceneIndex { get { return m_sceneIndex; } }
+    public GameObject CupboardButton;
 
 	public void IncrementScene()
 	{
@@ -22,6 +23,7 @@ public class SceneManager : MonoBehaviour
 			case 0:
 				break;
 			case 1:
+                CupboardButton.SetActive(true);
 				break;
 			case 2:
 				break;

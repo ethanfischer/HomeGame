@@ -13,12 +13,15 @@ public class ChefManager : DialogueManager
                 break;
 
             case 1:
-				if (AreScene1ConditionsMet())
-				{
-					VD.SetNode(2);
-				}
-				VD.SetNode(1);
-				break;
+                if (AreScene1ConditionsMet())
+                {
+                    VD.SetNode(2);
+                }
+                else
+                {
+                    VD.SetNode(1);
+                }
+                break;
         }
 
     }

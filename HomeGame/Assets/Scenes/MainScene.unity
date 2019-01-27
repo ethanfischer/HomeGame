@@ -3549,6 +3549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1570386559}
   - component: {fileID: 1570386558}
+  - component: {fileID: 1570386560}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -3568,6 +3569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c1d57d77ca6495eba006322ffe5276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CupboardButton: {fileID: 1826213000}
 --- !u!4 &1570386559
 Transform:
   m_ObjectHideFlags: 0
@@ -3582,6 +3584,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1570386560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570386557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c488d8bd414193438a250cd4b73b397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1599999962
 GameObject:
   m_ObjectHideFlags: 0
@@ -4231,7 +4245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1826213001
 RectTransform:
   m_ObjectHideFlags: 0
