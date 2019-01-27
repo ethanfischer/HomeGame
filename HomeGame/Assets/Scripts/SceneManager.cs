@@ -28,6 +28,8 @@ public class SceneManager : MonoBehaviour
     public Template_UIManager UIManager;
     public CookingMain CookingMain;
     public GameObject ParticleSystem;
+    public GameObject PotLid;
+    public GameObject PotLidOpen;
 
 
     public void IncrementScene()
@@ -58,6 +60,8 @@ public class SceneManager : MonoBehaviour
                 UIManager.textReplaceIngredient = CookingMain.LastStewIngredient();
                 break;
 			case 5:
+                PotLid.SetActive(false);
+                PotLidOpen.SetActive(true);
                 ParticleSystem.SetActive(true);
 				UIManager.stewScore = CookingMain.StewScore();
 				UIManager.textReplaceIngredient = CookingMain.RandomStewIngredient();
