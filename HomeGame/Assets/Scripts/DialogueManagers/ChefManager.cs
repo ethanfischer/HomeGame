@@ -16,6 +16,7 @@ public class ChefManager : DialogueManager
 				if (AreScene1ConditionsMet())
 				{
 					VD.SetNode(2);
+					UIManager.textReplaceIngredient = CookingMain.LastStewIngredient();
 				}
 				VD.SetNode(1);
 				break;

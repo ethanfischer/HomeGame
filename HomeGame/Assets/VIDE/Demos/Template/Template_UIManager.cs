@@ -51,6 +51,8 @@ public class Template_UIManager : MonoBehaviour
     bool animatingText = false; //Will help us know when text is currently being animated
     int availableChoices = 0;
 
+	public IngredientType textReplaceIngredient = IngredientType.NONE;
+
     IEnumerator TextAnimator;
 
     #endregion
@@ -371,11 +373,14 @@ public class Template_UIManager : MonoBehaviour
         //if (data.comments[data.commentIndex].Contains("[NAME]"))
         //    data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[NAME]", VD.assigned.gameObject.name);
 
-        if (data.comments[data.commentIndex].Contains("[ITEM]"))
-            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[ITEM]", "placeholder");
-
         if (data.comments[data.commentIndex].Contains("[WEAPON]"))
             data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[WEAPON]", "sword");
+
+		if (data.extraVars.ContainsKey("ReplaceItem"))
+		{
+			string itemName = CookingMain.GetIngredientName(textReplaceIngredient, (int)data.extraVars["ReplaceItem"] == 1);
+			data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[ITEM]", itemName);
+		}
     }
 
     #endregion
