@@ -784,6 +784,7 @@ MonoBehaviour:
   - Chef2
   - Chef3
   - Chef4
+  - Chef5
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
@@ -799,10 +800,11 @@ MonoBehaviour:
   - Pig2
   - Pig3
   - Pig4
+  - Pig5
   - QuestChartDemo
   - TriggeredDude
   - Witch
-  assignedIndex: 20
+  assignedIndex: 21
   assignedID: 68238
   assignedDialogue: Pig4
   interactionCount: 0
@@ -819,10 +821,10 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: Comment...
+    - text: Alright, so we have [ITEMS]?
       extraData: ExtraData
       inputSetIndex: 0
-      outputNodeIndex: -1
+      outputNodeIndex: 1
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -830,10 +832,42 @@ MonoBehaviour:
     ID: 0
     pTag: 
     sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - ReplaceItems
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Quite a stew.
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 1
+    pTag: 
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
-  S_actionNodes: []
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: GuineaPig
+    methodName: ResetInteractionCount
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 2
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
 --- !u!1 &247721249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3905,6 +3939,7 @@ MonoBehaviour:
   choiceInterval: 0.1
   useNavigation: 1
   textReplaceIngredient: -1
+  stewScore: 0
 --- !u!4 &1630843245
 Transform:
   m_ObjectHideFlags: 0
@@ -5056,7 +5091,7 @@ MonoBehaviour:
   defaultPlayerSprite: {fileID: 0}
   targetManager: {fileID: 0}
   preload: 1
-  notuptodate: 1
+  notuptodate: 0
   startp: 0
   loadtag: 
   langs: []
@@ -5081,43 +5116,9 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: Alright, so we have [ITEMS]
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: 2
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 2
-    pTag: 
-    sprite: {fileID: 0}
-    vars:
-    - 
-    varKeys:
-    - ReplaceItemReplaceItems
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: This is gonna be interesting..
-      extraData: ExtraData
-      inputSetIndex: 2
-      outputNodeIndex: 3
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 3
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
     - text: Let's get cookin!
       extraData: ExtraData
-      inputSetIndex: 3
+      inputSetIndex: 1
       outputNodeIndex: -1
       outActionIndex: 0
       sprites: {fileID: 0}
