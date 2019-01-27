@@ -298,8 +298,8 @@ MonoBehaviour:
     isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
-    gameObjectName: SceneManager
-    methodName: IncrementScene
+    gameObjectName: Chef
+    methodName: ResetInteractionCount
     paramType: 0
     gotoNode: -1
     param_bool: 0
@@ -1399,7 +1399,7 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: Comment...
+    - text: No Comment...
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
@@ -1613,7 +1613,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 0
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -1625,7 +1625,21 @@ MonoBehaviour:
     varKeys:
     - ReplaceItem
     isPlayer: 0
-  S_actionNodes: []
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: GuineaPig
+    methodName: ResetInteractionCount
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 1
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
 --- !u!1 &793949742
 GameObject:
   m_ObjectHideFlags: 0
@@ -3027,7 +3041,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
-      outActionIndex: 0
+      outActionIndex: 1
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -3038,6 +3052,40 @@ MonoBehaviour:
     - 0
     varKeys:
     - ReplaceItem
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: 'That gives me an idea: I''ll put in [ITEM], too!'
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: 2
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - 0
+    varKeys:
+    - ReplaceItem
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: What should we add last?
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 4
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
     isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
@@ -3051,6 +3099,20 @@ MonoBehaviour:
     param_float: 0
     ID: 1
     outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: Chef
+    methodName: PickAnItemForTheStew
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 3
+    outPlayerIndex: 1
     outActionIndex: -1
     ovrStartNode: -1
     renameDialogue: 
@@ -4703,7 +4765,7 @@ MonoBehaviour:
   targetManager: {fileID: 0}
   preload: 1
   notuptodate: 0
-  startp: 0
+  startp: 1
   loadtag: 
   langs: []
   S_playerDiags:
@@ -4713,7 +4775,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
-      outActionIndex: 1
+      outActionIndex: 0
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -4723,39 +4785,7 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: 'You got the ingredient
-
-'
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: -1
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 2
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
   S_actionNodes:
-  - pauseHere: 0
-    gameObjectName: Chef
-    methodName: JumpToNextNode
-    paramType: 0
-    gotoNode: -1
-    param_bool: 0
-    param_string: 
-    param_int: 0
-    param_float: 0
-    ID: 0
-    outPlayerIndex: -1
-    outActionIndex: -1
-    ovrStartNode: -1
-    renameDialogue: 
   - pauseHere: 0
     gameObjectName: Chef
     methodName: ResetInteractionCount
