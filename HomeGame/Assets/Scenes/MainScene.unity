@@ -3570,6 +3570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CupboardButton: {fileID: 1826213000}
+  CupboardUI: {fileID: 1049571870}
 --- !u!4 &1570386559
 Transform:
   m_ObjectHideFlags: 0

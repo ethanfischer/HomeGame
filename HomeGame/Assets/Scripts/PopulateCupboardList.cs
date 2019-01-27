@@ -47,6 +47,7 @@ public class PopulateCupboardList : MonoBehaviour
 		CookingMain.AddToStew(ingredient);
 		CookingMain.CupboardList.Remove(ingredient);
 
-		MakeButtons(); // Reset the button list without the selected item
+        SceneManager.Instance.IncrementScene();
+		//MakeButtons(); // Reset the button list without the selected item
 	}
 }
