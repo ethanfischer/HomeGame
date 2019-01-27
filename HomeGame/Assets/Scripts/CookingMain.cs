@@ -5,17 +5,17 @@ using UnityEngine;
 
 public enum IngredientType
 {
-	NONE = -1,
+    NONE = -1,
 
     CHICKEN_WINGS,
     ONIONS,
     JELLY,
     JALEPENOS,
     GRAPEFRUIT,
-    SWEETTARTS,
+    SWEET_TARTS,
     PICKLES,
     CRICKETS,
-    MUSHROOM,
+    MUSHROOMS,
     BROTH,
     SODA,
     BELL_PEPPER,
@@ -27,6 +27,21 @@ public enum IngredientType
 
 public class CookingMain : MonoBehaviour
 {
+    private static CookingMain _cookingMain;
+
+    public static CookingMain Instance
+    {
+        get
+        {
+            if (_cookingMain == null)
+            {
+                _cookingMain = GameObject.FindObjectOfType<CookingMain>();
+            }
+
+            return _cookingMain;
+        }
+    }
+
     public Ingredient[] AllIngredients { get { return m_ingredients; } }
     private Ingredient[] m_ingredients =
     { 
@@ -36,10 +51,10 @@ public class CookingMain : MonoBehaviour
         new Ingredient(IngredientType.JELLY,            0, 8, 1, 0, 0, 0, 0),
         new Ingredient(IngredientType.JALEPENOS,        0, 0, 0, 9, 0, 0, 0),
         new Ingredient(IngredientType.GRAPEFRUIT,       0, 2, 7, 0, 1, 8, 0),
-        new Ingredient(IngredientType.SWEETTARTS,       0, 5, 5, 0, 0, 0, 0),
+        new Ingredient(IngredientType.SWEET_TARTS,      0, 5, 5, 0, 0, 0, 0),
         new Ingredient(IngredientType.PICKLES,          4, 0, 6, 0, 0, 0, 0),
         new Ingredient(IngredientType.CRICKETS,         2, 1, 0, 0, 1, 6, 0),
-        new Ingredient(IngredientType.MUSHROOM,         0, 0, 0, 0, 0, 5, 0),
+        new Ingredient(IngredientType.MUSHROOMS,        0, 0, 0, 0, 0, 5, 0),
         new Ingredient(IngredientType.BROTH,            4, 0, 0, 0, 0, 4, 1),
         new Ingredient(IngredientType.SODA,             0, 8, 0, 0, 2, 0, 0),
         new Ingredient(IngredientType.BELL_PEPPER,      0, 1, 1, 0, 0, 0, 0),
@@ -83,6 +98,16 @@ public class CookingMain : MonoBehaviour
 		return m_stew.Ingredients.Count > 0 ? m_stew.Ingredients[m_stew.Ingredients.Count - 1].Type : IngredientType.NONE;
 	}
 
+	public IngredientType RandomStewIngredient()
+	{
+		return m_stew.Ingredients.Count > 0 ? m_stew.Ingredients[Random.Range(0,m_stew.Ingredients.Count)].Type : IngredientType.NONE;
+	}
+
+	public int StewScore()
+	{
+		return m_stew.FinalScore();
+	}
+
 	public void PopulateCupboard()
     {
         CupboardList.Clear();
@@ -99,25 +124,25 @@ public class CookingMain : MonoBehaviour
 
     public static string GetIngredientName(IngredientType ingredientType, bool capitalize = false)
     {
-        string allCaps = ingredientType.ToString().Replace('_',' ');
+        string allCaps = ingredientType.ToString().Replace('_', ' ');
         string allSmall = allCaps.ToLower();
 
-        if(capitalize)
+        if (capitalize)
         {
             StringBuilder sb = new StringBuilder();
-            
+
             bool nextIsCap = true;
-            for(int i=0; i<allSmall.Length; i++)
+            for (int i = 0; i < allSmall.Length; i++)
             {
-                if(nextIsCap)
+                if (nextIsCap)
                 {
                     sb.Append(allCaps[i]);
                     nextIsCap = false;
                 }
-                else 
+                else
                 {
                     sb.Append(allSmall[i]);
-					nextIsCap |= allSmall[i] == ' ';
+                    nextIsCap |= allSmall[i] == ' ';
                 }
             }
 
@@ -125,6 +150,17 @@ public class CookingMain : MonoBehaviour
         }
         else
             return allSmall;
+    }
+
+    public string GetNamesOfIngredientsInStew()
+    {
+        var result = "";
+        for (var i = 0; i < m_stew.Ingredients.Count; i++)
+        {
+            result += (i < m_stew.Ingredients.Count - 1) ? GetIngredientName(m_stew.Ingredients[i].Type) + ", " : "and " + GetIngredientName(m_stew.Ingredients[i].Type);
+        }
+
+        return result;
     }
 }
 
@@ -165,10 +201,10 @@ public struct Ingredient
 public class Stew
 {
     private List<Ingredient> m_ingredients = new List<Ingredient>();
-	public List<Ingredient> Ingredients { get { return m_ingredients; } }
+    public List<Ingredient> Ingredients { get { return m_ingredients; } }
 
 
-	public int FinalScore()
+    public int FinalScore()
     {
         int simpleScore = BaseScore();
         int multiplier = Multiplier();

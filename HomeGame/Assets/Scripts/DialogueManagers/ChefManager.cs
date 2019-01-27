@@ -13,31 +13,21 @@ public class ChefManager : DialogueManager
                 break;
 
             case 1:
-                if (AreScene1ConditionsMet())
-                {
-                    VD.SetNode(2);
-                }
-                else
-                {
-                    VD.SetNode(1);
-                }
+                VD.SetNode(1);
                 break;
         }
 
-    }
-
-    private bool AreScene1ConditionsMet()
-    {
-        if (CookingMain.LastStewIngredient() != IngredientType.NONE)
-        {
-            return true;
-        }
-
-        return false;
     }
 
     public override void ResetInteractionCount()
     {
         base.ResetInteractionCount();
     }
+
+	public void PickAnItemForTheStew()
+	{
+		IngredientType picked = CookingMain.CupboardList[Random.Range(0, CookingMain.CupboardList.Count)];
+		CookingMain.AddToStew(picked);
+		UIManager.textReplaceIngredient = picked;
+	}
 }
