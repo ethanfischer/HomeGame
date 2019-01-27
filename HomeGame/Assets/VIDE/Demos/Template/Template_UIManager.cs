@@ -387,7 +387,6 @@ public class Template_UIManager : MonoBehaviour
 			string items = CookingMain.Instance.GetNamesOfIngredientsInStew();
 			data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[ITEMS]", items);
 		}
-    }
 
 		if (data.extraVars.ContainsKey("ReplaceScore"))
 		{
