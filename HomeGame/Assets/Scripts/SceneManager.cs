@@ -56,6 +56,10 @@ public class SceneManager : MonoBehaviour
                 CupboardUI.SetActive(false);
                 UIManager.textReplaceIngredient = CookingMain.LastStewIngredient();
                 break;
+			case 5:
+				UIManager.stewScore = CookingMain.StewScore();
+				UIManager.textReplaceIngredient = CookingMain.RandomStewIngredient();
+				break;
             default:
                 break;
         }
