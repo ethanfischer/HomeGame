@@ -9,6 +9,7 @@ public class PopulateCupboardList : MonoBehaviour
     public GameObject ItemTemplate;
 	public Sprite[] Icons;
 	public Image FoodIcon;
+	public Sprite emptySprite;
 
     void Start()
 	{
@@ -18,7 +19,7 @@ public class PopulateCupboardList : MonoBehaviour
 
 	private List<GameObject> m_items = new List<GameObject>();
 
-    private void MakeButtons()
+    public void MakeButtons()
     {
 		foreach (GameObject item in m_items)
 		{
@@ -45,6 +46,8 @@ public class PopulateCupboardList : MonoBehaviour
 			hover.Icon = Icons[(int)ingredient];
 			hover.TargetImage = FoodIcon;
         }
+
+		FoodIcon.sprite = emptySprite;
     }
 
 	void OnCupboardItemSelected(IngredientType ingredient)

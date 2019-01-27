@@ -5,6 +5,8 @@ using VIDE_Data;
 
 public class ChefManager : DialogueManager
 {
+	public PopulateCupboardList CupboardList;
+
     public void JumpToNextNode()
     {
         switch (SceneManager.SceneIndex)
@@ -27,7 +29,9 @@ public class ChefManager : DialogueManager
 	public void PickAnItemForTheStew()
 	{
 		IngredientType picked = CookingMain.CupboardList[Random.Range(0, CookingMain.CupboardList.Count)];
+		CookingMain.CupboardList.Remove(picked);
 		CookingMain.AddToStew(picked);
 		UIManager.textReplaceIngredient = picked;
+		CupboardList.MakeButtons();
 	}
 }

@@ -111,7 +111,7 @@ public class CookingMain : MonoBehaviour
 	public void PopulateCupboard()
     {
         CupboardList.Clear();
-        while (CupboardList.Count < 10)
+        while (CupboardList.Count < 6)
         {
             var randomInt = Random.Range(0, AllIngredients.Length);
             var ingredient = AllIngredients[randomInt];

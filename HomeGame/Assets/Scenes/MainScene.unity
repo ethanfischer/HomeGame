@@ -2064,7 +2064,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 636892dc538ae452693d25894275da61, type: 3}
   - {fileID: 21300000, guid: c5bc365e626af4595978d0a9ff710a95, type: 3}
   - {fileID: 21300000, guid: d730981b7884d4e7697569f5fa2ce5e2, type: 3}
-  - {fileID: 21300000, guid: 07aec68cad90148a18fc30ee625bc025, type: 3}
+  - {fileID: 21300002, guid: 07aec68cad90148a18fc30ee625bc025, type: 3}
   - {fileID: 21300000, guid: e43a6fdf17e85443ebfec4684d0c7a43, type: 3}
   - {fileID: 21300000, guid: 4e363835cfd2d4e8d88f500621b7d0ee, type: 3}
   - {fileID: 21300000, guid: f640c972bbc79422ab905614c0809174, type: 3}
@@ -2074,6 +2074,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5cb81ff3defb14cee87f1bbab94eba16, type: 3}
   - {fileID: 21300000, guid: c5a26dbbe1d014716877ab14f490b284, type: 3}
   FoodIcon: {fileID: 1651901216}
+  emptySprite: {fileID: 21300000, guid: 07aec68cad90148a18fc30ee625bc025, type: 3}
 --- !u!1 &937684287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,6 +2227,7 @@ MonoBehaviour:
   UIManager: {fileID: 1630843244}
   SceneManager: {fileID: 1570386558}
   CookingMain: {fileID: 524133266}
+  CupboardList: {fileID: 919273663}
 --- !u!1 &947271983
 GameObject:
   m_ObjectHideFlags: 0
