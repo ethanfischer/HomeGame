@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731203, g: 0.3807408, b: 0.3587277, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -185,7 +185,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player Name
+  m_Text: 'You:
+
+'
 --- !u!222 &4338093
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -245,6 +247,7 @@ MonoBehaviour:
   - Chef2
   - Chef3
   - Chef4
+  - Chef5
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
@@ -260,6 +263,7 @@ MonoBehaviour:
   - Pig2
   - Pig3
   - Pig4
+  - Pig5
   - QuestChartDemo
   - TriggeredDude
   - Witch
@@ -267,10 +271,11 @@ MonoBehaviour:
   assignedID: 69262
   assignedDialogue: Chef3
   interactionCount: 0
-  alias: 
+  alias: Oliver
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: e653d015f48e041c4ade48f75f167e2d, type: 3}
+  defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
+    type: 3}
   targetManager: {fileID: 0}
   preload: 1
   notuptodate: 0
@@ -436,6 +441,7 @@ MonoBehaviour:
   - Chef2
   - Chef3
   - Chef4
+  - Chef5
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
@@ -451,17 +457,19 @@ MonoBehaviour:
   - Pig2
   - Pig3
   - Pig4
+  - Pig5
   - QuestChartDemo
   - TriggeredDude
   - Witch
-  assignedIndex: 17
+  assignedIndex: 18
   assignedID: 85529
   assignedDialogue: Pig1
   interactionCount: 0
-  alias: 
+  alias: Sidney
   overrideStartNode: -1
   defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
+    type: 3}
   targetManager: {fileID: 0}
   preload: 1
   notuptodate: 0
@@ -471,7 +479,7 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: Comment...
+    - text: Please don't put anything gross in there...
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
@@ -764,10 +772,11 @@ MonoBehaviour:
   assignedID: 68238
   assignedDialogue: Pig4
   interactionCount: 0
-  alias: 
+  alias: Sidney
   overrideStartNode: -1
   defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
+    type: 3}
   targetManager: {fileID: 0}
   preload: 1
   notuptodate: 0
@@ -897,7 +906,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NPC Name
+  m_Text: 
 --- !u!222 &247721252
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1036,6 +1045,7 @@ MonoBehaviour:
   - Chef2
   - Chef3
   - Chef4
+  - Chef5
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
@@ -1051,17 +1061,19 @@ MonoBehaviour:
   - Pig2
   - Pig3
   - Pig4
+  - Pig5
   - QuestChartDemo
   - TriggeredDude
   - Witch
-  assignedIndex: 16
+  assignedIndex: 17
   assignedID: 11881
   assignedDialogue: Pig0
   interactionCount: 0
-  alias: 
+  alias: Sidney
   overrideStartNode: -1
   defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
+    type: 3}
   targetManager: {fileID: 0}
   preload: 1
   notuptodate: 0
@@ -1239,10 +1251,11 @@ MonoBehaviour:
   assignedID: 19793
   assignedDialogue: Pig5
   interactionCount: 0
-  alias: 
+  alias: Sidney
   overrideStartNode: -1
   defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
+    type: 3}
   targetManager: {fileID: 0}
   preload: 0
   notuptodate: 0
@@ -1440,6 +1453,7 @@ MonoBehaviour:
   - Chef2
   - Chef3
   - Chef4
+  - Chef5
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
@@ -1455,6 +1469,7 @@ MonoBehaviour:
   - Pig2
   - Pig3
   - Pig4
+  - Pig5
   - QuestChartDemo
   - TriggeredDude
   - Witch
@@ -1462,10 +1477,11 @@ MonoBehaviour:
   assignedID: 65719
   assignedDialogue: Chef0
   interactionCount: 0
-  alias: 
+  alias: Oliver
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: e653d015f48e041c4ade48f75f167e2d, type: 3}
+  defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
+    type: 3}
   targetManager: {fileID: 0}
   preload: 1
   notuptodate: 0
@@ -1475,11 +1491,11 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: No Comment...
+    - text: Sup dude.
       extraData: ExtraData
       inputSetIndex: 0
-      outputNodeIndex: -1
-      outActionIndex: 0
+      outputNodeIndex: 4
+      outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -1489,6 +1505,114 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Sid is looking like she might eat one of us
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: 2
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - replacePig
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: I was thinking of throwing some stuff together for a stew
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: 3
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 3
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: What say you?
+      extraData: ExtraData
+      inputSetIndex: 3
+      outputNodeIndex: 5
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 4
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 3
+    s_comment:
+    - text: Hey Oliver.
+      extraData: ExtraData
+      inputSetIndex: 4
+      outputNodeIndex: 1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Dude, sup?
+      extraData: ExtraData
+      inputSetIndex: 4
+      outputNodeIndex: 1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: (I don't feel like talking)
+      extraData: ExtraData
+      inputSetIndex: 4
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 5
+    pTag: You
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - replaceChef
+    isPlayer: 1
+  - commentCount: 2
+    s_comment:
+    - text: 'Let''s do it. '
+      extraData: ExtraData
+      inputSetIndex: 5
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Let's doot!
+      extraData: ExtraData
+      inputSetIndex: 5
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 6
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
   S_actionNodes:
   - pauseHere: 0
     gameObjectName: SceneManager
@@ -1650,6 +1774,7 @@ MonoBehaviour:
   - Chef2
   - Chef3
   - Chef4
+  - Chef5
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
@@ -1665,17 +1790,19 @@ MonoBehaviour:
   - Pig2
   - Pig3
   - Pig4
+  - Pig5
   - QuestChartDemo
   - TriggeredDude
   - Witch
-  assignedIndex: 18
+  assignedIndex: 19
   assignedID: 43203
   assignedDialogue: Pig2
   interactionCount: 0
-  alias: 
+  alias: Sidney
   overrideStartNode: -1
   defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
+    type: 3}
   targetManager: {fileID: 0}
   preload: 1
   notuptodate: 0
@@ -3100,6 +3227,7 @@ MonoBehaviour:
   - Chef2
   - Chef3
   - Chef4
+  - Chef5
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
@@ -3115,6 +3243,7 @@ MonoBehaviour:
   - Pig2
   - Pig3
   - Pig4
+  - Pig5
   - QuestChartDemo
   - TriggeredDude
   - Witch
@@ -3122,10 +3251,11 @@ MonoBehaviour:
   assignedID: 60217
   assignedDialogue: Chef2
   interactionCount: 0
-  alias: 
+  alias: Oliver
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: e653d015f48e041c4ade48f75f167e2d, type: 3}
+  defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
+    type: 3}
   targetManager: {fileID: 0}
   preload: 1
   notuptodate: 0
@@ -4242,10 +4372,11 @@ MonoBehaviour:
   assignedID: 71647
   assignedDialogue: Pig3
   interactionCount: 0
-  alias: 
+  alias: Sidney
   overrideStartNode: -1
   defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
+    type: 3}
   targetManager: {fileID: 0}
   preload: 1
   notuptodate: 0
@@ -4765,10 +4896,11 @@ MonoBehaviour:
   assignedID: 94819
   assignedDialogue: Chef5
   interactionCount: 0
-  alias: 
+  alias: Oliver
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: e653d015f48e041c4ade48f75f167e2d, type: 3}
+  defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
+    type: 3}
   targetManager: {fileID: 0}
   preload: 0
   notuptodate: 0
@@ -4923,6 +5055,7 @@ MonoBehaviour:
   - Chef2
   - Chef3
   - Chef4
+  - Chef5
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
@@ -4938,6 +5071,7 @@ MonoBehaviour:
   - Pig2
   - Pig3
   - Pig4
+  - Pig5
   - QuestChartDemo
   - TriggeredDude
   - Witch
@@ -4945,10 +5079,11 @@ MonoBehaviour:
   assignedID: 69997
   assignedDialogue: Chef1
   interactionCount: 0
-  alias: 
+  alias: Oliver
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: e653d015f48e041c4ade48f75f167e2d, type: 3}
+  defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
+    type: 3}
   targetManager: {fileID: 0}
   preload: 1
   notuptodate: 0
@@ -5061,10 +5196,11 @@ MonoBehaviour:
   assignedID: 51920
   assignedDialogue: Chef4
   interactionCount: 0
-  alias: 
+  alias: Oliver
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: e653d015f48e041c4ade48f75f167e2d, type: 3}
+  defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
+    type: 3}
   targetManager: {fileID: 0}
   preload: 1
   notuptodate: 0
