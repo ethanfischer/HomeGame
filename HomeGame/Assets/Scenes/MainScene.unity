@@ -3019,7 +3019,7 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: Comment...
+    - text: Wow! I never thought of adding [ITEM]!
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
@@ -3030,8 +3030,10 @@ MonoBehaviour:
     ID: 0
     pTag: 
     sprite: {fileID: 0}
-    vars: []
-    varKeys: []
+    vars:
+    - 0
+    varKeys:
+    - ReplaceItem
     isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
@@ -3571,6 +3573,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CupboardButton: {fileID: 1826213000}
   CupboardUI: {fileID: 1049571870}
+  UIManager: {fileID: 1630843244}
+  CookingMain: {fileID: 524133266}
 --- !u!4 &1570386559
 Transform:
   m_ObjectHideFlags: 0
@@ -3744,6 +3748,7 @@ MonoBehaviour:
   player_secsPerLetter: 0.02
   choiceInterval: 0.1
   useNavigation: 1
+  textReplaceIngredient: -1
 --- !u!4 &1630843245
 Transform:
   m_ObjectHideFlags: 0

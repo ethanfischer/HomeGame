@@ -25,6 +25,9 @@ public class SceneManager : MonoBehaviour
     public int SceneIndex { get { return m_sceneIndex; } }
     public GameObject CupboardButton;
     public GameObject CupboardUI;
+    public Template_UIManager UIManager;
+    public CookingMain CookingMain;
+
 
     public void IncrementScene()
     {
@@ -44,6 +47,7 @@ public class SceneManager : MonoBehaviour
                 break;
             case 2:
                 CupboardUI.SetActive(false);
+                UIManager.textReplaceIngredient = CookingMain.LastStewIngredient();
                 break;
             default:
                 break;
