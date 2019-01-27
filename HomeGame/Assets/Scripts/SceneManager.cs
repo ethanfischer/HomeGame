@@ -27,6 +27,7 @@ public class SceneManager : MonoBehaviour
     public GameObject CupboardUI;
     public Template_UIManager UIManager;
     public CookingMain CookingMain;
+    public GameObject ParticleSystem;
 
 
     public void IncrementScene()
@@ -57,6 +58,7 @@ public class SceneManager : MonoBehaviour
                 UIManager.textReplaceIngredient = CookingMain.LastStewIngredient();
                 break;
 			case 5:
+                ParticleSystem.SetActive(true);
 				UIManager.stewScore = CookingMain.StewScore();
 				UIManager.textReplaceIngredient = CookingMain.RandomStewIngredient();
 				break;
