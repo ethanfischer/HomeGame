@@ -12,10 +12,10 @@ public enum IngredientType
     JELLY,
     JALEPENOS,
     GRAPEFRUIT,
-    SWEETTARTS,
+    SWEET_TARTS,
     PICKLES,
     CRICKETS,
-    MUSHROOM,
+    MUSHROOMS,
     BROTH,
     SODA,
     BELL_PEPPER,
@@ -36,10 +36,10 @@ public class CookingMain : MonoBehaviour
         new Ingredient(IngredientType.JELLY,            0, 8, 1, 0, 0, 0, 0),
         new Ingredient(IngredientType.JALEPENOS,        0, 0, 0, 9, 0, 0, 0),
         new Ingredient(IngredientType.GRAPEFRUIT,       0, 2, 7, 0, 1, 8, 0),
-        new Ingredient(IngredientType.SWEETTARTS,       0, 5, 5, 0, 0, 0, 0),
+        new Ingredient(IngredientType.SWEET_TARTS,      0, 5, 5, 0, 0, 0, 0),
         new Ingredient(IngredientType.PICKLES,          4, 0, 6, 0, 0, 0, 0),
         new Ingredient(IngredientType.CRICKETS,         2, 1, 0, 0, 1, 6, 0),
-        new Ingredient(IngredientType.MUSHROOM,         0, 0, 0, 0, 0, 5, 0),
+        new Ingredient(IngredientType.MUSHROOMS,        0, 0, 0, 0, 0, 5, 0),
         new Ingredient(IngredientType.BROTH,            4, 0, 0, 0, 0, 4, 1),
         new Ingredient(IngredientType.SODA,             0, 8, 0, 0, 2, 0, 0),
         new Ingredient(IngredientType.BELL_PEPPER,      0, 1, 1, 0, 0, 0, 0),
@@ -81,6 +81,16 @@ public class CookingMain : MonoBehaviour
 	public IngredientType LastStewIngredient()
 	{
 		return m_stew.Ingredients.Count > 0 ? m_stew.Ingredients[m_stew.Ingredients.Count - 1].Type : IngredientType.NONE;
+	}
+
+	public IngredientType RandomStewIngredient()
+	{
+		return m_stew.Ingredients.Count > 0 ? m_stew.Ingredients[Random.Range(0,m_stew.Ingredients.Count)].Type : IngredientType.NONE;
+	}
+
+	public int StewScore()
+	{
+		return m_stew.FinalScore();
 	}
 
 	public void PopulateCupboard()

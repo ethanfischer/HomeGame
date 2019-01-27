@@ -52,6 +52,7 @@ public class Template_UIManager : MonoBehaviour
     int availableChoices = 0;
 
 	public IngredientType textReplaceIngredient = IngredientType.NONE;
+	public int stewScore;
 
     IEnumerator TextAnimator;
 
@@ -381,7 +382,12 @@ public class Template_UIManager : MonoBehaviour
 			string itemName = CookingMain.GetIngredientName(textReplaceIngredient, (int)data.extraVars["ReplaceItem"] == 1);
 			data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[ITEM]", itemName);
 		}
-    }
+
+		if (data.extraVars.ContainsKey("ReplaceScore"))
+		{
+			data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[SCORE]", stewScore.ToString());
+		}
+	}
 
     #endregion
 
