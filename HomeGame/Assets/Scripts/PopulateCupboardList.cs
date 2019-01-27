@@ -7,6 +7,8 @@ public class PopulateCupboardList : MonoBehaviour
 {
     public CookingMain CookingMain;
     public GameObject ItemTemplate;
+	public Sprite[] Icons;
+	public Image FoodIcon;
 
     void Start()
 	{
@@ -39,6 +41,9 @@ public class PopulateCupboardList : MonoBehaviour
 			Button button = newItem.GetComponent<Button>();
 			button.onClick.AddListener(delegate { OnCupboardItemSelected(ingredient); });
 
+			ButtonHoverer hover = newItem.AddComponent<ButtonHoverer>();
+			hover.Icon = Icons[(int)ingredient];
+			hover.TargetImage = FoodIcon;
         }
     }
 
@@ -50,4 +55,8 @@ public class PopulateCupboardList : MonoBehaviour
         SceneManager.Instance.IncrementScene();
         MakeButtons(); // Reset the button list without the selected item
     }
+
+	void OnCupboardItemHovered(Sprite icon)
+	{
+	}
 }

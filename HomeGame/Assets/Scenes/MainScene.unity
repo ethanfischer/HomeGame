@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731203, g: 0.3807408, b: 0.3587277, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -2056,6 +2056,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CookingMain: {fileID: 524133266}
   ItemTemplate: {fileID: 1817239520}
+  Icons:
+  - {fileID: 21300000, guid: 19f6d1296759d4c53afe8bbc57218495, type: 3}
+  - {fileID: 21300000, guid: 74d01dcb1660342bf99a734caafd6788, type: 3}
+  - {fileID: 21300000, guid: 0f8aa29cbcf96462a964f0b9fa1a3426, type: 3}
+  - {fileID: 21300000, guid: df47a5a18bad24e0983e1f5462fa3e1c, type: 3}
+  - {fileID: 21300000, guid: 636892dc538ae452693d25894275da61, type: 3}
+  - {fileID: 21300000, guid: c5bc365e626af4595978d0a9ff710a95, type: 3}
+  - {fileID: 21300000, guid: d730981b7884d4e7697569f5fa2ce5e2, type: 3}
+  - {fileID: 21300000, guid: 07aec68cad90148a18fc30ee625bc025, type: 3}
+  - {fileID: 21300000, guid: e43a6fdf17e85443ebfec4684d0c7a43, type: 3}
+  - {fileID: 21300000, guid: 4e363835cfd2d4e8d88f500621b7d0ee, type: 3}
+  - {fileID: 21300000, guid: f640c972bbc79422ab905614c0809174, type: 3}
+  - {fileID: 21300000, guid: 91fba7092987b453b8a018a481d6cca6, type: 3}
+  - {fileID: 21300000, guid: 9891490a119884cc9a30dd25fdba14c0, type: 3}
+  - {fileID: 21300000, guid: 08120a0aad8704176ba0f5fa5e7bdbf8, type: 3}
+  - {fileID: 21300000, guid: 5cb81ff3defb14cee87f1bbab94eba16, type: 3}
+  - {fileID: 21300000, guid: c5a26dbbe1d014716877ab14f490b284, type: 3}
+  FoodIcon: {fileID: 1651901216}
 --- !u!1 &937684287
 GameObject:
   m_ObjectHideFlags: 0
