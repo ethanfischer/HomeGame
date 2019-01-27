@@ -69,6 +69,7 @@ public class CookingMain : MonoBehaviour
 
     public Dictionary<IngredientType, Ingredient> IngredientDictionary = new Dictionary<IngredientType, Ingredient>();
     private Stew m_stew = new Stew();
+	public Stew Stew { get { return m_stew; } }
 
     void Awake()
     {

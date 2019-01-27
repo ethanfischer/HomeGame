@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.WSA.Persistence;
+//using UnityEngine.XR.WSA.Persistence;
 
 public class SceneManager : MonoBehaviour
 {
@@ -30,6 +30,7 @@ public class SceneManager : MonoBehaviour
     public GameObject ParticleSystem;
     public GameObject PotLid;
     public GameObject PotLidOpen;
+	public StewPot Pot;
 
 
     public void IncrementScene()
@@ -60,6 +61,7 @@ public class SceneManager : MonoBehaviour
                 UIManager.textReplaceIngredient = CookingMain.LastStewIngredient();
                 break;
 			case 5:
+				Pot.DoProceduralStew(CookingMain.Stew);
                 PotLid.SetActive(false);
                 PotLidOpen.SetActive(true);
                 ParticleSystem.SetActive(true);
