@@ -467,7 +467,7 @@ MonoBehaviour:
   interactionCount: 0
   alias: Sidney
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: 5611ba10aeb144a658ee05b09fa2062e, type: 3}
   defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
     type: 3}
   targetManager: {fileID: 0}
@@ -774,7 +774,7 @@ MonoBehaviour:
   interactionCount: 0
   alias: Sidney
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: 5611ba10aeb144a658ee05b09fa2062e, type: 3}
   defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
     type: 3}
   targetManager: {fileID: 0}
@@ -786,7 +786,7 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: Alright, so we have [ITEMS]?
+    - text: '...[ITEMS]?'
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: 1
@@ -804,7 +804,7 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: Quite a stew.
+    - text: I hope you know what you're doing
       extraData: ExtraData
       inputSetIndex: 1
       outputNodeIndex: -1
@@ -1071,7 +1071,7 @@ MonoBehaviour:
   interactionCount: 0
   alias: Sidney
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: 5611ba10aeb144a658ee05b09fa2062e, type: 3}
   defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
     type: 3}
   targetManager: {fileID: 0}
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: Comment...
+    - text: '*stomach rumbles*'
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
@@ -1253,7 +1253,7 @@ MonoBehaviour:
   interactionCount: 0
   alias: Sidney
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: 5611ba10aeb144a658ee05b09fa2062e, type: 3}
   defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
     type: 3}
   targetManager: {fileID: 0}
@@ -1800,7 +1800,7 @@ MonoBehaviour:
   interactionCount: 0
   alias: Sidney
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: 5611ba10aeb144a658ee05b09fa2062e, type: 3}
   defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
     type: 3}
   targetManager: {fileID: 0}
@@ -1812,7 +1812,7 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: I've never had [ITEM] in a stew before.
+    - text: I've never had [ITEM] in a stew before
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
@@ -4350,6 +4350,7 @@ MonoBehaviour:
   - Chef2
   - Chef3
   - Chef4
+  - Chef5
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
@@ -4365,16 +4366,17 @@ MonoBehaviour:
   - Pig2
   - Pig3
   - Pig4
+  - Pig5
   - QuestChartDemo
   - TriggeredDude
   - Witch
-  assignedIndex: 19
+  assignedIndex: 20
   assignedID: 71647
   assignedDialogue: Pig3
   interactionCount: 0
   alias: Sidney
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: 5611ba10aeb144a658ee05b09fa2062e, type: 3}
   defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
     type: 3}
   targetManager: {fileID: 0}
@@ -4386,7 +4388,7 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: Comment...
+    - text: '*Sidney sniffs the stew and laughs nervously*'
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
@@ -4397,8 +4399,10 @@ MonoBehaviour:
     ID: 0
     pTag: 
     sprite: {fileID: 0}
-    vars: []
-    varKeys: []
+    vars:
+    - 
+    varKeys:
+    - fastFood
     isPlayer: 0
   S_actionNodes: []
 --- !u!1 &1817239520
