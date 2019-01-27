@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum IngredientType
 {
-	NONE = -1,
+    NONE = -1,
 
     CHICKEN_WINGS,
     ONIONS,
@@ -27,6 +27,21 @@ public enum IngredientType
 
 public class CookingMain : MonoBehaviour
 {
+    private static CookingMain _cookingMain;
+
+    public static CookingMain Instance
+    {
+        get
+        {
+            if (_cookingMain == null)
+            {
+                _cookingMain = GameObject.FindObjectOfType<CookingMain>();
+            }
+
+            return _cookingMain;
+        }
+    }
+
     public Ingredient[] AllIngredients { get { return m_ingredients; } }
     private Ingredient[] m_ingredients =
     { 
@@ -78,12 +93,12 @@ public class CookingMain : MonoBehaviour
         }
     }
 
-	public IngredientType LastStewIngredient()
-	{
-		return m_stew.Ingredients.Count > 0 ? m_stew.Ingredients[m_stew.Ingredients.Count - 1].Type : IngredientType.NONE;
-	}
+    public IngredientType LastStewIngredient()
+    {
+        return m_stew.Ingredients.Count > 0 ? m_stew.Ingredients[m_stew.Ingredients.Count - 1].Type : IngredientType.NONE;
+    }
 
-	public void PopulateCupboard()
+    public void PopulateCupboard()
     {
         CupboardList.Clear();
         while (CupboardList.Count < 10)
@@ -99,25 +114,25 @@ public class CookingMain : MonoBehaviour
 
     public static string GetIngredientName(IngredientType ingredientType, bool capitalize = false)
     {
-        string allCaps = ingredientType.ToString().Replace('_',' ');
+        string allCaps = ingredientType.ToString().Replace('_', ' ');
         string allSmall = allCaps.ToLower();
 
-        if(capitalize)
+        if (capitalize)
         {
             StringBuilder sb = new StringBuilder();
-            
+
             bool nextIsCap = true;
-            for(int i=0; i<allSmall.Length; i++)
+            for (int i = 0; i < allSmall.Length; i++)
             {
-                if(nextIsCap)
+                if (nextIsCap)
                 {
                     sb.Append(allCaps[i]);
                     nextIsCap = false;
                 }
-                else 
+                else
                 {
                     sb.Append(allSmall[i]);
-					nextIsCap |= allSmall[i] == ' ';
+                    nextIsCap |= allSmall[i] == ' ';
                 }
             }
 
@@ -125,6 +140,17 @@ public class CookingMain : MonoBehaviour
         }
         else
             return allSmall;
+    }
+
+    public string GetNamesOfIngredientsInStew()
+    {
+        var result = "";
+        for (var i = 0; i < m_stew.Ingredients.Count; i++)
+        {
+            result += (i < m_stew.Ingredients.Count - 1) ? GetIngredientName(m_stew.Ingredients[i].Type) + ", " : "and " + GetIngredientName(m_stew.Ingredients[i].Type);
+        }
+
+        return result;
     }
 }
 
@@ -165,10 +191,10 @@ public struct Ingredient
 public class Stew
 {
     private List<Ingredient> m_ingredients = new List<Ingredient>();
-	public List<Ingredient> Ingredients { get { return m_ingredients; } }
+    public List<Ingredient> Ingredients { get { return m_ingredients; } }
 
 
-	public int FinalScore()
+    public int FinalScore()
     {
         int simpleScore = BaseScore();
         int multiplier = Multiplier();

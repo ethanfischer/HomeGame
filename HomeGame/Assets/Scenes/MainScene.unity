@@ -5026,6 +5026,7 @@ MonoBehaviour:
   - Chef2
   - Chef3
   - Chef4
+  - Chef5
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
@@ -5041,6 +5042,7 @@ MonoBehaviour:
   - Pig2
   - Pig3
   - Pig4
+  - Pig5
   - QuestChartDemo
   - TriggeredDude
   - Witch
@@ -5054,7 +5056,7 @@ MonoBehaviour:
   defaultPlayerSprite: {fileID: 0}
   targetManager: {fileID: 0}
   preload: 1
-  notuptodate: 0
+  notuptodate: 1
   startp: 0
   loadtag: 
   langs: []
@@ -5064,8 +5066,8 @@ MonoBehaviour:
     - text: '[ITEM], eh? If you say so'
       extraData: ExtraData
       inputSetIndex: 0
-      outputNodeIndex: -1
-      outActionIndex: 0
+      outputNodeIndex: 1
+      outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -5076,6 +5078,56 @@ MonoBehaviour:
     - 1
     varKeys:
     - ReplaceItem
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Alright, so we have [ITEMS]
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: 2
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - ReplaceItemReplaceItems
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: This is gonna be interesting..
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: 3
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 3
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Let's get cookin!
+      extraData: ExtraData
+      inputSetIndex: 3
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 4
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
     isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
