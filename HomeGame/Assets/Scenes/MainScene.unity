@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731203, g: 0.3807408, b: 0.3587277, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -285,7 +285,7 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: Go get another item
+    - text: We need one last thing to complete the stew!
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
@@ -303,7 +303,7 @@ MonoBehaviour:
     isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
-    gameObjectName: Chef
+    gameObjectName: OliverButton
     methodName: ResetInteractionCount
     paramType: 0
     gotoNode: -1
@@ -483,7 +483,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 0
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -493,7 +493,21 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 0
-  S_actionNodes: []
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: SidneyButton
+    methodName: ResetInteractionCount
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 1
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
 --- !u!1 &154585829
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,7 +973,7 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: I hope you know what you're doing
+    - text: I hope you know what you're doing.
       extraData: ExtraData
       inputSetIndex: 1
       outputNodeIndex: -1
@@ -975,7 +989,7 @@ MonoBehaviour:
     isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
-    gameObjectName: GuineaPig
+    gameObjectName: SidneyButton
     methodName: ResetInteractionCount
     paramType: 0
     gotoNode: -1
@@ -1242,7 +1256,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 0
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -1252,7 +1266,21 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 0
-  S_actionNodes: []
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: SidneyButton
+    methodName: ResetInteractionCount
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 1
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
 --- !u!1 &445037651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,13 +1440,45 @@ MonoBehaviour:
   defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
     type: 3}
   targetManager: {fileID: 0}
-  preload: 0
+  preload: 1
   notuptodate: 0
   startp: 0
   loadtag: 
   langs: []
-  S_playerDiags: []
-  S_actionNodes: []
+  S_playerDiags:
+  - commentCount: 1
+    s_comment:
+    - text: Hmmm... I'd give your stew [SCORE] out of 10.
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 0
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - ReplaceScore
+    isPlayer: 0
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: SidneyButton
+    methodName: ResetInteractionCount
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 1
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
 --- !u!1 &524133265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,7 +2119,7 @@ MonoBehaviour:
     isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
-    gameObjectName: GuineaPig
+    gameObjectName: SidneyButton
     methodName: ResetInteractionCount
     paramType: 0
     gotoNode: -1
@@ -3561,7 +3621,7 @@ MonoBehaviour:
     ovrStartNode: -1
     renameDialogue: 
   - pauseHere: 0
-    gameObjectName: Chef
+    gameObjectName: OliverButton
     methodName: PickAnItemForTheStew
     paramType: 0
     gotoNode: -1
@@ -4777,7 +4837,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 0
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -4789,7 +4849,21 @@ MonoBehaviour:
     varKeys:
     - fastFood
     isPlayer: 0
-  S_actionNodes: []
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: SidneyButton
+    methodName: ResetInteractionCount
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 1
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
 --- !u!1 &1817239520
 GameObject:
   m_ObjectHideFlags: 0
@@ -5292,13 +5366,45 @@ MonoBehaviour:
   defaultPlayerSprite: {fileID: 21300000, guid: 3ee04ceb05556014984f5cfa5767a2fa,
     type: 3}
   targetManager: {fileID: 0}
-  preload: 0
+  preload: 1
   notuptodate: 0
   startp: 0
   loadtag: 
   langs: []
-  S_playerDiags: []
-  S_actionNodes: []
+  S_playerDiags:
+  - commentCount: 1
+    s_comment:
+    - text: I'm proud of our stew. I think adding [ITEM] really made it great!
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 0
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - 0
+    varKeys:
+    - ReplaceItem
+    isPlayer: 0
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: OliverButton
+    methodName: ResetInteractionCount
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 1
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
 --- !u!1 &1919069127
 GameObject:
   m_ObjectHideFlags: 0
@@ -5499,7 +5605,7 @@ MonoBehaviour:
     isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
-    gameObjectName: Chef
+    gameObjectName: OliverButton
     methodName: ResetInteractionCount
     paramType: 0
     gotoNode: -1

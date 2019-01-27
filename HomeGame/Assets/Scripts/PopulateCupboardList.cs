@@ -58,8 +58,4 @@ public class PopulateCupboardList : MonoBehaviour
         SceneManager.Instance.IncrementScene();
         MakeButtons(); // Reset the button list without the selected item
     }
-
-	void OnCupboardItemHovered(Sprite icon)
-	{
-	}
 }

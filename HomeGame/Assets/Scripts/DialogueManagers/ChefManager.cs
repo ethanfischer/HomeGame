@@ -29,9 +29,10 @@ public class ChefManager : DialogueManager
 	public void PickAnItemForTheStew()
 	{
 		IngredientType picked = CookingMain.CupboardList[Random.Range(0, CookingMain.CupboardList.Count)];
-		CookingMain.CupboardList.Remove(picked);
 		CookingMain.AddToStew(picked);
 		UIManager.textReplaceIngredient = picked;
+
+		CookingMain.CupboardList.Remove(picked);
 		CupboardList.MakeButtons();
 	}
 }
