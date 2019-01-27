@@ -31,6 +31,7 @@ public class SceneManager : MonoBehaviour
     public GameObject PotLid;
     public GameObject PotLidOpen;
 	public StewPot Pot;
+	public GameObject RestartButton;
 
 
     public void IncrementScene()
@@ -72,4 +73,9 @@ public class SceneManager : MonoBehaviour
                 break;
         }
     }
+
+	public void ShowRestartButton()
+	{
+		RestartButton.SetActive(true);
+	}
 }
