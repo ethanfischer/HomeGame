@@ -377,22 +377,23 @@ public class Template_UIManager : MonoBehaviour
         if (data.comments[data.commentIndex].Contains("[WEAPON]"))
             data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[WEAPON]", "sword");
 
-		if (data.extraVars.ContainsKey("ReplaceItem"))
-		{
-			string itemName = CookingMain.GetIngredientName(textReplaceIngredient, (int)data.extraVars["ReplaceItem"] == 1);
-			data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[ITEM]", itemName);
-		}
-		if (data.extraVars.ContainsKey("ReplaceItems"))
-		{
-			string items = CookingMain.Instance.GetNamesOfIngredientsInStew();
-			data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[ITEMS]", items);
-		}
+        if (data.extraVars.ContainsKey("ReplaceItem"))
+        {
+            string itemName = CookingMain.GetIngredientName(textReplaceIngredient, (int)data.extraVars["ReplaceItem"] == 1);
+            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[ITEM]", itemName);
+        }
+        if (data.extraVars.ContainsKey("ReplaceItems"))
+        {
+            string items = CookingMain.Instance.GetNamesOfIngredientsInStew();
+            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[ITEMS]", items);
+        }
 
-		if (data.extraVars.ContainsKey("ReplaceScore"))
-		{
-			data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[SCORE]", stewScore.ToString());
-		}
-	}
+        if (data.extraVars.ContainsKey("ReplaceScore"))
+        {
+            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[SCORE]", stewScore.ToString());
+        }
+    }
+
 
     #endregion
 
