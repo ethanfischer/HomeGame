@@ -86,6 +86,11 @@ public class Template_UIManager : MonoBehaviour
         }
     }
 
+	public void AdvanceDialogue()
+	{
+		Interact(VD.assigned);
+	}
+
     //This begins the conversation. 
     void Begin(VIDE_Assign dialogue)
     {
