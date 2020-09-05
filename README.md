@@ -1,4 +1,6 @@
-# Home Game:
+# Stewpendous!:
+
+Play it here: https://garglesmcgee.itch.io/stewpendous
 
 * combination system
 * UI
